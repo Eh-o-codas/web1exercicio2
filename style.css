@@ -99,10 +99,13 @@ aside img {
     max-width: 25rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    border: 2px solid white;
     z-index: 1;
     object-fit: cover;
     display: flex;
     place-self: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0.6rem 0.2rem 0.2rem rgba(0, 0, 0, 1));
 }
 
 .profile-title-wrapper {
