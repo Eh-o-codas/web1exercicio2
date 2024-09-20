@@ -156,109 +156,99 @@
         </div>
     </aside>
 
-    <nav>
-        <ul>
-            <li class="link">
-                <div class="input-wrapper">
-                    <input type="radio" id="radio1" name="nav"  checked>
-                    <label for="radio1">Work Experience</label>
-                    <div id="content1" class="text-element">
-                        <h1>Work Experience</h1>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>Outlier</h3>
-                        <p>May 2024 - Present</p>
-                        <h2>AI Training - AI Evaluation</h2>
-                        <ul>
-                            <li> Collaborated in the evaluation and improvement of AI models, ensuring precise and efficient results.</li>
-                            <li>Participated in the development of new AI projects, contributing to the increased data accuracy.</li>
-                        </ul>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>Fire 88 Imports</h3>
-                        <p>January 2021 – March 2023</p>
-                        <h2>Marketing Coordinator - IT Analyst</h2>
-                        <ul>
-                            <li> Automated manual processes using AutoIT v3, increasing company efficiency and reducing the time spent on repetitive tasks.</li>
-                            <li>Leveraged Google Analytics data to improve the company website's interface, optimizing user experience and boosting engagement.</li>
-                            <li>Developed interactive marketing materials using Google Web Designer (GWD).</li>
-                            <li>Maintained information within the ERP system.</li>
-                        </ul>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>Inscont</h3>
-                        <p>January 2014 – November 2014</p>
-                        <h2>Accounting Activities Assistant (Internship)</h2>
-                    </div>
-                </div>
-            </li>
-            <li class="link">
-                <div class="input-wrapper">
-                    <input type="radio" id="radio2" name="nav">
-                    <label for="radio2">Education</label>
-                    <div id="content2" class="text-element">
-                        <h1>Education</h1>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>Instituto Federal do Paraná</h3>
-                        <p>2012 - 2014</p>
-                        <h2>Technician in Accounting</h2>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>Universidade Federal do Paraná</h3>
-                        <p>2015 - 2019</p>
-                        <h2>Economics</h2>
-                        <ul>
-                            <li> During the course, I developed a solid foundation in data analysis and critical thinking, using tools such as R and the Laboratory for Simulation Development (LSD) for macroeconomic and statistical analysis. This education provided me with strong analytical skills, essential for data-driven decision-making and solving complex problems, which I apply directly in the tech field.</li>
-                        </ul>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>Universidade Federal do Paraná</h3>
-                        <p>2024 - Present</p>
-                        <h2>Analysis and Systems Development</h2>
-                        <ul>
-                            <li> Currently enrolled, with a focus on developing technological solutions and improving programming skills. The course is helping me deepen my knowledge in fullstack development, solidifying my ability to create efficient solutions in high-demand technological environments.</li>
-                            <li> The course has also enhanced my understanding of algorithms, which has significantly improved my ability to write more optimized and logically structured code. This deeper knowledge allows me to tackle complex problems more efficiently and develop solutions that are both effective and elegant.</li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li class="link">
-                <div class="input-wrapper">
-                    <input type="radio" id="radio3" name="nav">
-                    <label for="radio3">Other Interests</label>
-                    <div id="content3" class="text-element">
-                        <h1>Other Activities / Interests</h1>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>Web Development</h3>
-                        <p>2023 – Present</p>
-                        <h2>Rocketseat and Personal Projects</h2>
-                        <ul>
-                            <li> Leveraging Rocketseat course knowledge to build modern technology-focused projects.</li>
-                            <li> <strong>Transferable Skills:</strong></li>
-                            <li> <strong>Project Management:</strong> Planning and executing web projects using agile methodologies and tools like Github for version control.</li>
-                            <li> <strong>Technological Adaptability:</strong> Continuous learning of new tools and trends to quickly adapt to technological advancements.</li>
-                        </ul>
-                        <ion-icon name="ellipse"></ion-icon>
-                        <h3>2D Multiplayer Game Development</h3>
-                        <p>2015 - 2020</p>
-                        <h2>TheForgottenServer Project Fork</h2>
-                        <ul>
-                            <li> Contributed to Tibia server development, starting with testing and game design, learning Lua programming, and managing complex projects.</li>
-                            <li> Assisted in validating a machine learning system for bot detection using Python and Scikit-learn. Contributed to ensuring data consistency and analyzing player behavior. </li>
-                            <li> Open-Source Project Available in <a href="https://github.com/andersonfaaria/antibot">Github</a> </li>
-                            <li> <strong>Transferable Skills:</strong></li>
-                            <li> <strong>Collaboration and Communication:</strong> Coordinated with team members for script development and feature integration, effectively organizing tasks and tracking progress using Trello.</li>
-                            <li> <strong>Data Validation and Analysis:</strong> Validated machine learning system outputs and data consistency.</li>
-                            <li> <strong>Creativity and Problem-Solving:</strong> Developed game mechanics, server events, and user experience designs.</li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    
-    <main>
+    <div class="main-content">
         <div class="main-background"></div>
         <div class="main-background2"></div>
         <div class="main-background3"></div>
         <div class="main-background4"></div>
-    </main>
-    
+        <div class="tabs">
+            <input type="radio" id="radio1" name="tabs" checked>
+            <input type="radio" id="radio2" name="tabs">
+            <input type="radio" id="radio3" name="tabs">
+
+            <nav class="tab-buttons">
+                <label for="radio1" class="tab-label" id="nav-label1">WORK EXPERIENCE</label>
+                <label for="radio2" class="tab-label" id="nav-label2">EDUCATION</label>
+                <label for="radio3" class="tab-label" id="nav-label3">OTHER INTERESTS</label>
+            </nav>
+
+            <main class="content">
+                <div id="content1" class="text-element">
+                    <h1>Work Experience</h1>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>Outlier</h3>
+                    <p>May 2024 - Present</p>
+                    <h2>AI Training - AI Evaluation</h2>
+                    <ul>
+                        <li> Collaborated in the evaluation and improvement of AI models, ensuring precise and efficient results.</li>
+                        <li>Participated in the development of new AI projects, contributing to the increased data accuracy.</li>
+                    </ul>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>Fire 88 Imports</h3>
+                    <p>January 2021 – March 2023</p>
+                    <h2>Marketing Coordinator - IT Analyst</h2>
+                    <ul>
+                        <li> Automated manual processes using AutoIT v3, increasing company efficiency and reducing the time spent on repetitive tasks.</li>
+                        <li>Leveraged Google Analytics data to improve the company website's interface, optimizing user experience and boosting engagement.</li>
+                        <li>Developed interactive marketing materials using Google Web Designer (GWD).</li>
+                        <li>Maintained information within the ERP system.</li>
+                    </ul>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>Inscont</h3>
+                    <p>January 2014 – November 2014</p>
+                    <h2>Accounting Activities Assistant (Internship)</h2>
+                </div>
+                <div id="content2" class="text-element">
+                    <h1>Education</h1>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>Instituto Federal do Paraná</h3>
+                    <p>2012 - 2014</p>
+                    <h2>Technician in Accounting</h2>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>Universidade Federal do Paraná</h3>
+                    <p>2015 - 2019</p>
+                    <h2>Economics</h2>
+                    <ul>
+                        <li> During the course, I developed a solid foundation in data analysis and critical thinking, using tools such as R and the Laboratory for Simulation Development (LSD) for macroeconomic and statistical analysis. This education provided me with strong analytical skills, essential for data-driven decision-making and solving complex problems, which I apply directly in the tech field.</li>
+                    </ul>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>Universidade Federal do Paraná</h3>
+                    <p>2024 - Present</p>
+                    <h2>Analysis and Systems Development</h2>
+                    <ul>
+                        <li> Currently enrolled, with a focus on developing technological solutions and improving programming skills. The course is helping me deepen my knowledge in fullstack development, solidifying my ability to create efficient solutions in high-demand technological environments.</li>
+                        <li> The course has also enhanced my understanding of algorithms, which has significantly improved my ability to write more optimized and logically structured code. This deeper knowledge allows me to tackle complex problems more efficiently and develop solutions that are both effective and elegant.</li>
+                    </ul>
+                </div>
+                <div id="content3" class="text-element">
+                    <h1>Other Activities / Interests</h1>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>Web Development</h3>
+                    <p>2023 – Present</p>
+                    <h2>Rocketseat and Personal Projects</h2>
+                    <ul>
+                        <li> Leveraging Rocketseat course knowledge to build modern technology-focused projects.</li>
+                        <li> <strong>Transferable Skills:</strong></li>
+                        <li> <strong>Project Management:</strong> Planning and executing web projects using agile methodologies and tools like Github for version control.</li>
+                        <li> <strong>Technological Adaptability:</strong> Continuous learning of new tools and trends to quickly adapt to technological advancements.</li>
+                    </ul>
+                    <ion-icon name="ellipse"></ion-icon>
+                    <h3>2D Multiplayer Game Development</h3>
+                    <p>2015 - 2020</p>
+                    <h2>TheForgottenServer Project Fork</h2>
+                    <ul>
+                        <li> Contributed to Tibia server development, starting with testing and game design, learning Lua programming, and managing complex projects.</li>
+                        <li> Assisted in validating a machine learning system for bot detection using Python and Scikit-learn. Contributed to ensuring data consistency and analyzing player behavior. </li>
+                        <li> Open-Source Project Available in <a href="https://github.com/andersonfaaria/antibot">Github</a> </li>
+                        <li> <strong>Transferable Skills:</strong></li>
+                        <li> <strong>Collaboration and Communication:</strong> Coordinated with team members for script development and feature integration, effectively organizing tasks and tracking progress using Trello.</li>
+                        <li> <strong>Data Validation and Analysis:</strong> Validated machine learning system outputs and data consistency.</li>
+                        <li> <strong>Creativity and Problem-Solving:</strong> Developed game mechanics, server events, and user experience designs.</li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>    
 
 </body>
 </html>

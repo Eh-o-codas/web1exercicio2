@@ -150,27 +150,17 @@ aside img {
 }
 
 nav { 
-    grid-area: 1 / 2 / 2 / 6; 
-    background: var(--nav-background-color);
-    display: grid;
-    place-items: end;
+    display: flex;
+    justify-content: end;
     border-bottom: 1px solid hsl(216, 86%, 33%);
     padding-bottom: 0.5rem;
-}
-
-nav ul {
     font-weight: 600;
-    display: flex;
     gap: 16rem;
     z-index: 1;
+    transition: 0.5s;
 }
 
-nav ul .link {
-    list-style: none;
-    transition: 0.5s;    
-}
-
-nav ul .link label {
+nav label {
     display: block;    
     position: relative;
     text-decoration: none;
@@ -182,26 +172,26 @@ nav ul .link label {
     white-space: nowrap;
 }
 
-nav ul:hover label {
+nav:hover label {
   transform: scale(1.2);
   opacity: 0.2;
   filter: blur(1px);
 }
 
 
-nav ul .link label:hover {
+nav label:hover {
     transform: scale(2);
     opacity: 1;
     filter: blur(0);
 }
 
-nav ul .link label:hover:before {
+nav label:hover:before {
     transition: transform 0.5s;
     transform-origin: left;
     transform: scaleX(1);
 }
 
-nav .input-wrapper input {
+.tabs input[type="radio"] {
     position: absolute;
     top: 0;
     left: 0;
@@ -211,40 +201,34 @@ nav .input-wrapper input {
     overflow: hidden;
 }
 
-nav .input-wrapper input[type="radio"]:checked + label {
+#radio1:checked~nav #nav-label1,
+#radio2:checked~nav #nav-label2,
+#radio3:checked~nav #nav-label3 {
     font-weight: 900;
 }
 
-input[id="radio1"]:checked ~ #content1 {
-    display: block;
-}
-
-input[id="radio2"]:checked ~ #content2 {
-    display: block;
-}
-
-input[id="radio3"]:checked ~ #content3 {
-    display: block;
-}
-
 .text-element {
-    position: absolute;
-    top: calc(16vh);
-    left: min(max(30vw, 45rem), 55vw);
-    right: 20rem;
-    min-height: 50vh;
     display: none;
-    /* background: var(--content-background-color); */
     color: var(--content-text-color);
-    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.4s ease-in-out;
+}
+
+#radio1:checked~.content #content1,
+#radio2:checked~.content #content2,
+#radio3:checked~.content #content3 {
+    display: block;
+}
+
+.main-content {
+    grid-area: 1 / 2 / 6 / 6;
+    padding-top: 8rem;
 }
 
 .text-element a {
-  pointer-events: auto;
-  text-decoration: none;
-  color: inherit;
-  font-weight: 700;
-  
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .text-element h1 {
@@ -281,24 +265,16 @@ input[id="radio3"]:checked ~ #content3 {
 }
 
 .text-element ul li {
-  font-size: 1.6rem;
-  line-height: 2.8rem;
-  max-width: 50rem;
-  font-weight: var(--font-weight-400);
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    max-width: 50rem;
+    font-weight: var(--font-weight-400);
 }
 
 .text-element ion-icon {
     font-size: 1.2rem;
     margin-block: 1.2rem;
     font-weight: var(--font-weight-400);
-}
-
-main {
-    grid-area: 2 / 2 / 6 / 6; 
-    background: var(--main-background-color);
-    height: 100%;
-    width: 100%;
-    z-index: -6;
 }
 
 .main-background {
@@ -318,12 +294,14 @@ main {
 .main-background2 {
   background: url('./assets/download2.png');
   z-index: -4;
-  opacity: 0.2;
+  opacity: 0.15;
   position: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+  left: 0;
+  top: 0;
   height: var(--body-height);
 }
 
@@ -337,6 +315,8 @@ main {
   background-repeat: no-repeat;
   width: 100%;
   height: var(--body-height);
+  left: 0;
+  top: 0;
 }
 
 .main-background4 {
@@ -349,6 +329,14 @@ main {
   background-repeat: no-repeat;
   width: 100%;
   height: var(--body-height);
+  left: 0;
+  top: 0;
+}
+
+main {
+    padding: 8rem 16rem;
+    display: flex;
+    flex-grow: 1;
 }
 
 li:hover .star-rating ion-icon {
@@ -356,23 +344,48 @@ li:hover .star-rating ion-icon {
 	        animation: rotate-vert-center 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
- @-webkit-keyframes rotate-vert-center {
+@-webkit-keyframes rotate-vert-center {
+0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+}
+100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+}
+}
+@keyframes rotate-vert-center {
+0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+}
+100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+}
+}
+
+#radio1:checked ~ .content #content1,
+#radio2:checked ~ .content #content2,
+#radio3:checked ~ .content #content3 {
+    opacity: 1;
+    transform: translateX(0);
+    animation: imgload 0.4s ease-in-out, slide-right 0.4s ease-in-out;
+}
+
+@keyframes imgload {
     0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
+        opacity: 0;
     }
-    100% {
-      -webkit-transform: rotateY(360deg);
-              transform: rotateY(360deg);
-    }
-  }
-  @keyframes rotate-vert-center {
-    0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
-    }
-    100% {
-      -webkit-transform: rotateY(360deg);
-              transform: rotateY(360deg);
-    }
-  }
+}
+
+@keyframes slide-right {
+0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+}
+100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+}
